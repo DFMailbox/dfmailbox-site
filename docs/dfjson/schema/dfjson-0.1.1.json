@@ -1,0 +1,687 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "DFJson",
+    "oneOf": [
+        {
+            "type": "object",
+            "required": [
+                "id",
+                "val"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "dict"
+                    ]
+                },
+                "val": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/DFJson"
+                    }
+                }
+            }
+        },
+        {
+            "type": "object",
+            "required": [
+                "id",
+                "val"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "comp"
+                    ]
+                },
+                "val": {
+                    "type": "string"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "required": [
+                "id",
+                "val"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "str"
+                    ]
+                },
+                "val": {
+                    "type": "string"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "required": [
+                "id",
+                "val"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "num"
+                    ]
+                },
+                "val": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "required": [
+                "id",
+                "pitch",
+                "x",
+                "y",
+                "yaw",
+                "z"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "loc"
+                    ]
+                },
+                "pitch": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "x": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "y": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "yaw": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "z": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "required": [
+                "id",
+                "x",
+                "y",
+                "z"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "vec"
+                    ]
+                },
+                "x": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "y": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "z": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "required": [
+                "id",
+                "pitch",
+                "sound",
+                "volume"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "snd"
+                    ]
+                },
+                "pitch": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "sound": {
+                    "type": "string"
+                },
+                "variant": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "volume": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "required": [
+                "id",
+                "pitch",
+                "sound",
+                "volume"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "csnd"
+                    ]
+                },
+                "pitch": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "sound": {
+                    "type": "string"
+                },
+                "volume": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "required": [
+                "cluster",
+                "data",
+                "id",
+                "particle"
+            ],
+            "properties": {
+                "cluster": {
+                    "$ref": "#/definitions/ParticleCluster"
+                },
+                "data": {
+                    "$ref": "#/definitions/ParticleData"
+                },
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "particle"
+                    ]
+                },
+                "particle": {
+                    "type": "string"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "required": [
+                "amplifier",
+                "duration",
+                "id",
+                "potion"
+            ],
+            "properties": {
+                "amplifier": {
+                    "type": "integer",
+                    "format": "uint64",
+                    "minimum": 0.0
+                },
+                "duration": {
+                    "type": "integer",
+                    "format": "uint64",
+                    "minimum": 0.0
+                },
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "potion"
+                    ]
+                },
+                "potion": {
+                    "type": "string"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "required": [
+                "id",
+                "val"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "list"
+                    ]
+                },
+                "val": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DFJson"
+                    }
+                }
+            }
+        }
+    ],
+    "definitions": {
+        "DFJson": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "val"
+                    ],
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "enum": [
+                                "dict"
+                            ]
+                        },
+                        "val": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "$ref": "#/definitions/DFJson"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "val"
+                    ],
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "enum": [
+                                "comp"
+                            ]
+                        },
+                        "val": {
+                            "type": "string"
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "val"
+                    ],
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "enum": [
+                                "str"
+                            ]
+                        },
+                        "val": {
+                            "type": "string"
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "val"
+                    ],
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "enum": [
+                                "num"
+                            ]
+                        },
+                        "val": {
+                            "type": "number",
+                            "format": "double"
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "pitch",
+                        "x",
+                        "y",
+                        "yaw",
+                        "z"
+                    ],
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "enum": [
+                                "loc"
+                            ]
+                        },
+                        "pitch": {
+                            "type": "number",
+                            "format": "double"
+                        },
+                        "x": {
+                            "type": "number",
+                            "format": "double"
+                        },
+                        "y": {
+                            "type": "number",
+                            "format": "double"
+                        },
+                        "yaw": {
+                            "type": "number",
+                            "format": "double"
+                        },
+                        "z": {
+                            "type": "number",
+                            "format": "double"
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "x",
+                        "y",
+                        "z"
+                    ],
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "enum": [
+                                "vec"
+                            ]
+                        },
+                        "x": {
+                            "type": "number",
+                            "format": "double"
+                        },
+                        "y": {
+                            "type": "number",
+                            "format": "double"
+                        },
+                        "z": {
+                            "type": "number",
+                            "format": "double"
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "pitch",
+                        "sound",
+                        "volume"
+                    ],
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "enum": [
+                                "snd"
+                            ]
+                        },
+                        "pitch": {
+                            "type": "number",
+                            "format": "double"
+                        },
+                        "sound": {
+                            "type": "string"
+                        },
+                        "variant": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "volume": {
+                            "type": "number",
+                            "format": "double"
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "pitch",
+                        "sound",
+                        "volume"
+                    ],
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "enum": [
+                                "csnd"
+                            ]
+                        },
+                        "pitch": {
+                            "type": "number",
+                            "format": "double"
+                        },
+                        "sound": {
+                            "type": "string"
+                        },
+                        "volume": {
+                            "type": "number",
+                            "format": "double"
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "cluster",
+                        "data",
+                        "id",
+                        "particle"
+                    ],
+                    "properties": {
+                        "cluster": {
+                            "$ref": "#/definitions/ParticleCluster"
+                        },
+                        "data": {
+                            "$ref": "#/definitions/ParticleData"
+                        },
+                        "id": {
+                            "type": "string",
+                            "enum": [
+                                "particle"
+                            ]
+                        },
+                        "particle": {
+                            "type": "string"
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "amplifier",
+                        "duration",
+                        "id",
+                        "potion"
+                    ],
+                    "properties": {
+                        "amplifier": {
+                            "type": "integer",
+                            "format": "uint64",
+                            "minimum": 0.0
+                        },
+                        "duration": {
+                            "type": "integer",
+                            "format": "uint64",
+                            "minimum": 0.0
+                        },
+                        "id": {
+                            "type": "string",
+                            "enum": [
+                                "potion"
+                            ]
+                        },
+                        "potion": {
+                            "type": "string"
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "val"
+                    ],
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "enum": [
+                                "list"
+                            ]
+                        },
+                        "val": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/DFJson"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "ParticleCluster": {
+            "type": "object",
+            "required": [
+                "amount",
+                "horizontal",
+                "vertical"
+            ],
+            "properties": {
+                "amount": {
+                    "type": "integer",
+                    "format": "uint64",
+                    "minimum": 0.0
+                },
+                "horizontal": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "vertical": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        "ParticleData": {
+            "type": "object",
+            "properties": {
+                "color": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "color_fade": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "color_variation": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "format": "double"
+                },
+                "material": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "motion_variation": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "format": "double"
+                },
+                "opacity": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "format": "double"
+                },
+                "roll": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "format": "double"
+                },
+                "size": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "format": "double"
+                },
+                "size_variation": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "format": "double"
+                },
+                "x": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "format": "double"
+                },
+                "y": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "format": "double"
+                },
+                "z": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "format": "double"
+                }
+            }
+        }
+    }
+}

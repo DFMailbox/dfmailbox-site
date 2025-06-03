@@ -1,1 +1,5 @@
 site_name: DFMailbox documentation
+nav:
+  - Home: index.md
+  - DFJson: dfjson/index.md
+  - DFMailbox: dfmailbox/index.md

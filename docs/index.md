@@ -1,17 +1,10 @@
-# Welcome to MkDocs
+# Welcome to DFTools Docs
+DFTools is a collection of unofficial tools and standards for DiamondFire
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+# Tools
 
-## Commands
+- [DFJson](dfjson/index.md)
+- [DFMailbox](dfmailbox/index.md)
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Made by DynamicCake
