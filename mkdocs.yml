@@ -1,5 +1,10 @@
 site_name: DFMailbox documentation
 nav:
   - Home: index.md
+  - Getting Started:
+    - Setup: setup.md
   - DFJson: dfjson/index.md
-  - DFMailbox: dfmailbox/index.md
+theme:
+  name: material
+  palette:
+    scheme: slate

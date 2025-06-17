@@ -18,6 +18,7 @@
       default = pkgs.mkShell {
         nativeBuildInputs = with pkgs; [
             mkdocs
+            python312Packages.mkdocs-material
         ];
       };
     });
